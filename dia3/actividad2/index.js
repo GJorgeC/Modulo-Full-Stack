@@ -1,3 +1,5 @@
+const { error } = require("qrcode-terminal");
+
 const ArtGallery = [ 
     { id: 1, artist: "Monet", title: "Water Lilies", year: 1916, isExhibited: true },
     { id: 2, artist: "Van Gogh", title: "Starry Night", year: 1889, isExhibited: true }, 
@@ -14,12 +16,25 @@ const ArtGallery = [
     ArtGallery.forEach(element => {
         console.log(element.title);
     });
+    
 
+    //Map para imprimir los titulos
     const map = ArtGallery.map(elemento => elemento.title);
+    console.log('\n\n Mapeado de ArtGallery\n'); 
     console.log(map); 
     
-    const filter = ArtGallery.filter(elemento => elemento.isExhibited === true);
+
+    //Filter para imprimir los elementos de la lista que estén exhibidos
+    const filter = ArtGallery.filter(elemento => elemento.isExhibited);
     console.log(filter);
+
+    //Find para obra específica
+    const obra = ArtGallery.find( (art) => art.title == title);
+
+    if(!obra){
+        return{ msg:"Obra no encontrada", error:404 }
+    }
+    return obra;
 
     const some = ArtGallery.some(elemento => elemento.year === 1503);
     console.log(filter);
@@ -31,13 +46,5 @@ const ArtGallery = [
     const findIndex = ArtGallery.findIndex(elemento => elemento.title === "Guernica");
     console.log(findIndex);
 
-
-    function changeExhibited(identificador){
-        const findIndex = ArtGallery.findIndex(elemento => elemento.title === "Guernica");
-        if(findIndex.elemento.isExhibited === true){
-            ArtGallery.
-        }
-        
-    }
 
 

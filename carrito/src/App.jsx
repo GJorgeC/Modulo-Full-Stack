@@ -60,7 +60,7 @@ function App() {
         {listaProductos.map((p, i) => (
           <div key={i}>{p.producto} - {p.precio}€</div>
         ))}
-        <strong>Total: {precioTotal.toFixed(2)}€</strong>
+        <strong>Total: {precioTotal}€</strong>
       </div>
     </>
   )
